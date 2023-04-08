@@ -1,4 +1,4 @@
-package com.example.c868_backend.storage;
+package com.example.c868Backend.storage;
 
 public class StorageException extends RuntimeException {
 

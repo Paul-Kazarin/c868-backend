@@ -1,4 +1,4 @@
-package com.example.c868_backend.storage;
+package com.example.c868Backend.storage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;

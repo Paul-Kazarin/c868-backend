@@ -1,4 +1,4 @@
-package com.example.c868_backend;
+package com.example.c868Backend;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -6,15 +6,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import com.example.c868_backend.storage.StorageProperties;
-import com.example.c868_backend.storage.StorageService;
+import com.example.c868Backend.storage.StorageProperties;
+import com.example.c868Backend.storage.StorageService;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
-public class c868_backendApplication {
+public class c868BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(c868_backendApplication.class, args);
+		SpringApplication.run(c868BackendApplication.class, args);
 	}
 
 	@Bean

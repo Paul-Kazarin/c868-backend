@@ -1,4 +1,4 @@
-package com.example.c868_backend;
+package com.example.c868Backend;
 
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

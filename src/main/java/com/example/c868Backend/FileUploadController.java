@@ -1,4 +1,4 @@
-package com.example.c868_backend;
+package com.example.c868Backend;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -19,8 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.c868_backend.storage.StorageFileNotFoundException;
-import com.example.c868_backend.storage.StorageService;
+import com.example.c868Backend.storage.StorageFileNotFoundException;
+import com.example.c868Backend.storage.StorageService;
 
 @Controller
 public class FileUploadController {
