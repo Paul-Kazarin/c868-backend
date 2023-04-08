@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,6 +24,7 @@ import com.example.c868Backend.storage.StorageFileNotFoundException;
 import com.example.c868Backend.storage.StorageService;
 
 @Controller
+@RequestMapping(path="/item") // This means URL's start with /item (after Application path)
 public class FileUploadController {
 
     private final StorageService storageService;
@@ -52,7 +54,7 @@ public class FileUploadController {
                                           "attachment; filename=\"" + file.getFilename() + "\"").body(file);
     }
 
-    @PostMapping("/")
+    @PostMapping("/upload")
     public String handleFileUpload(@RequestParam("file") MultipartFile file,
         RedirectAttributes redirectAttributes) {
 
@@ -60,7 +62,7 @@ public class FileUploadController {
         redirectAttributes.addFlashAttribute("message",
                                              "You successfully uploaded " + file.getOriginalFilename() + "!");
 
-        return "redirect:/";
+        return "redirect:/item/";
     }
 
     @ExceptionHandler(StorageFileNotFoundException.class)
