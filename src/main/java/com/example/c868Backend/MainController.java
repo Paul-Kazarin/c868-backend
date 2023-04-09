@@ -38,8 +38,14 @@ public class MainController {
 	}
 
 	@DeleteMapping(path="/delete/{id}")
-	public @ResponseBody void deleteItem(@PathVariable Integer id) {
+	public @ResponseBody void deleteItemById(@PathVariable Integer id) {
 		// This deletes a JSON or XML with the items
 		itemRepository.deleteById(id);
+	}
+
+	@DeleteMapping(path="/delete")
+	public @ResponseBody void deleteItem(@RequestBody Item item) {
+		// This deletes a JSON or XML with the items
+		itemRepository.delete(item);
 	}
 }
