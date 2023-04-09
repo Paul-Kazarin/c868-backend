@@ -3,6 +3,7 @@ package com.example.c868Backend;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,5 +35,11 @@ public class MainController {
 	public @ResponseBody Optional<Item> getItem(@PathVariable Integer id) {
 		// This returns a JSON or XML with the items
 		return itemRepository.findById(id);
+	}
+
+	@DeleteMapping(path="/delete/{id}")
+	public @ResponseBody void deleteItem(@PathVariable Integer id) {
+		// This deletes a JSON or XML with the items
+		itemRepository.deleteById(id);
 	}
 }

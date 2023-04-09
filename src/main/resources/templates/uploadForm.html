@@ -5,6 +5,10 @@
   <h2 th:text="${message}"/>
 </div>
 
+<h2>
+  Click "Choose File" button below. Select the image you want to upload for this item. Then click "Upload" button.
+</h2>
+
 <div>
   <form method="POST" enctype="multipart/form-data" action="/item/upload">
     <table>
@@ -14,13 +18,14 @@
   </form>
 </div>
 
+<h2>
+  Copy URL from the list below with the file name that you just uploaded. Return to the browser tab with your open input form and paste this URL to the "Image" input field.
+</h2>
+
 <div>
   <ul>
     <li th:each="file : ${files}">
-      <a th:href="${file}" th:text="${file}" />
-    </li>
-    <li>
-      <img src="http://localhost:8080/item/files/DB1.png">
+      <a th:text="${file}" />
     </li>
   </ul>
 </div>
