@@ -22,6 +22,7 @@ public class Item {
 	private Integer peopleCapacity;
 	private String image;
 	private Boolean active;
+	private String comment;
 
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
@@ -61,4 +62,7 @@ public class Item {
 
 	public Boolean getActive() {return active;}
 	public void setActive(Boolean active) {this.active = active;}
+
+	public String getComment() {return comment;}
+	public void setComment(String comment) {this.comment = comment;}
 }
