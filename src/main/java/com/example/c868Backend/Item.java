@@ -1,15 +1,19 @@
 package com.example.c868Backend;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.sql.Timestamp;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Item {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 	private String type;
 	private String subType;
 	private String brand;
@@ -23,9 +27,15 @@ public class Item {
 	private String image;
 	private Boolean active;
 	private String comment;
+	@Column(name = "dateCreated")
+	@CreationTimestamp
+	private Timestamp dateCreated;
+	@Column(name = "dateUpdated")
+	@UpdateTimestamp
+	private Timestamp dateUpdated;
 
-	public Integer getId() {return id;}
-	public void setId(Integer id) {this.id = id;}
+	public Long getId() {return id;}
+	public void setId(Long id) {this.id = id;}
 
 	public String getType() {return type;}
 	public void setType(String type) {this.type = type;}
@@ -65,4 +75,11 @@ public class Item {
 
 	public String getComment() {return comment;}
 	public void setComment(String comment) {this.comment = comment;}
+
+	public Timestamp getDateCreated() {return dateCreated;}
+	public void setDateCreated(Timestamp dateCreated) {this.dateCreated = dateCreated;}
+
+	public Timestamp getDateUpdated() {return dateUpdated;}
+	public void setDateUpdated(Timestamp dateUpdated) {this.dateUpdated = dateUpdated;}
+
 }
