@@ -81,11 +81,5 @@ public class Item {
 
 	public Timestamp getDateUpdated() {return dateUpdated;}
 	public void setDateUpdated(Timestamp dateUpdated) {this.dateUpdated = dateUpdated;}
-
-	public class DateCreatedRange {
-		private Timestamp createdStartDate;
-		private Timestamp createdEndDate;
-	}
-
 }
 
