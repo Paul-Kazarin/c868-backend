@@ -1,0 +1,8 @@
+
+Ž
+java:S1130&"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(†…Ð¸ÿÿÿÿÿ8èÿÏ—ö0
+o
+java:S6204,"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ã¤£’8êÿÏ—ö0
+H
+java:S1452F"&Remove usage of generic wildcard type.(ÀóŽ´ûÿÿÿÿ8ÈÔ’˜ö0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ï²¤ð

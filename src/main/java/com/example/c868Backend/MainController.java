@@ -1,5 +1,6 @@
 package com.example.c868Backend;
 
+import java.sql.Timestamp;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -32,13 +33,25 @@ public class MainController {
 	}
 
 	@GetMapping(path="/{id}")
-	public @ResponseBody Optional<Item> getItem(@PathVariable Integer id) {
+	public @ResponseBody Optional<Item> getItem(@PathVariable Long id) {
 		// This returns a JSON or XML with the items
 		return itemRepository.findById(id);
 	}
 
+	@GetMapping(path="/{createdStartDate}/{createdEndDate}")
+	public @ResponseBody Iterable<Item> getItemsInDateCreatedRange(@PathVariable Timestamp createdStartDate, @PathVariable Timestamp createdEndDate) {
+		// This returns a JSON or XML with the items
+		return itemRepository.findItemsInDateCreatedRange(createdStartDate, createdEndDate);
+	}
+
+//	@GetMapping(path="/daterange")
+//	public @ResponseBody Iterable<Item> getItemsInDateCreatedRangePayload(@RequestBody Item range) {
+//		// This returns a JSON or XML with the items
+//		return itemRepository.findItemsInDateCreatedRangePayload(range);
+//	}
+
 	@DeleteMapping(path="/delete/{id}")
-	public @ResponseBody void deleteItemById(@PathVariable Integer id) {
+	public @ResponseBody void deleteItemById(@PathVariable Long id) {
 		// This deletes a JSON or XML with the items
 		itemRepository.deleteById(id);
 	}
