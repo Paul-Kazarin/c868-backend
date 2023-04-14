@@ -37,10 +37,16 @@ public class MainController {
 		return itemRepository.findById(id);
 	}
 
-	@GetMapping(path="/{createdStartDate}/{createdEndDate}")
+	@GetMapping(path="/createddate/{createdStartDate}/{createdEndDate}")
 	public @ResponseBody Iterable<Item> getItemsInDateCreatedRange(@PathVariable String createdStartDate, @PathVariable String createdEndDate) {
 		// This returns a JSON or XML with the items
 		return itemRepository.findItemsInDateCreatedRange(createdStartDate, createdEndDate);
+	}
+
+	@GetMapping(path="/updateddate/{updatedStartDate}/{updatedEndDate}")
+	public @ResponseBody Iterable<Item> getItemsInDateUpdatedRange(@PathVariable String updatedStartDate, @PathVariable String updatedEndDate) {
+		// This returns a JSON or XML with the items
+		return itemRepository.findItemsInDateUpdatedRange(updatedStartDate, updatedEndDate);
 	}
 
 	@DeleteMapping(path="/delete/{id}")

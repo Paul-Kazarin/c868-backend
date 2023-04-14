@@ -21,4 +21,14 @@ public interface ItemRepository extends CrudRepository<Item, Long>, JpaRepositor
     )
     Iterable<Item> findItemsInDateCreatedRange(@Param(value = "createdStartDate") String createdStartDate, @Param(value = "createdEndDate") String createdEndDate);
 
+    @Query(nativeQuery = true, value = "SELECT  "
+                                           + " * "
+                                           + "FROM  "
+                                           + "item "
+                                           + "WHERE  "
+                                           + "date_updated >= :updatedStartDate "
+                                           + "AND  "
+                                           + "date_updated <= :updatedEndDate "
+    )
+    Iterable<Item> findItemsInDateUpdatedRange(@Param(value = "updatedStartDate") String updatedStartDate, @Param(value = "updatedEndDate") String updatedEndDate);
 }
