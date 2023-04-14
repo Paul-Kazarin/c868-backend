@@ -37,3 +37,5 @@ j
 :src/main/java/com/example/c868Backend/BrandController.java,3/d/3d657d79d2bef8e0b8e6f380fb7811e7e8b23d5f
 i
 9src/main/java/com/example/c868Backend/TypeRepository.java,3/9/39f460fdb3296b73b278ccb46618241dd1835320
+r
+Bsrc/main/java/com/example/c868Backend/ItemsInDateCreatedRange.java,f/7/f7a7182e7253234ee24c65635218fbe7df21e2f0
