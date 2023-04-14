@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.sql.Timestamp;
+import java.time.LocalDate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -29,10 +29,10 @@ public class Item {
 	private String comment;
 	@Column(name = "dateCreated")
 	@CreationTimestamp
-	private Timestamp dateCreated;
+	private LocalDate dateCreated;
 	@Column(name = "dateUpdated")
 	@UpdateTimestamp
-	private Timestamp dateUpdated;
+	private LocalDate dateUpdated;
 
 	public Long getId() {return id;}
 	public void setId(Long id) {this.id = id;}
@@ -76,10 +76,10 @@ public class Item {
 	public String getComment() {return comment;}
 	public void setComment(String comment) {this.comment = comment;}
 
-	public Timestamp getDateCreated() {return dateCreated;}
-	public void setDateCreated(Timestamp dateCreated) {this.dateCreated = dateCreated;}
+	public LocalDate getDateCreated() {return dateCreated;}
+	public void setDateCreated(LocalDate dateCreated) {this.dateCreated = dateCreated;}
 
-	public Timestamp getDateUpdated() {return dateUpdated;}
-	public void setDateUpdated(Timestamp dateUpdated) {this.dateUpdated = dateUpdated;}
+	public LocalDate getDateUpdated() {return dateUpdated;}
+	public void setDateUpdated(LocalDate dateUpdated) {this.dateUpdated = dateUpdated;}
 }
 
