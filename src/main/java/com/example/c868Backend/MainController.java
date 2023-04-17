@@ -49,6 +49,12 @@ public class MainController {
 		return itemRepository.findItemsInDateUpdatedRange(updatedStartDate, updatedEndDate);
 	}
 
+	@GetMapping(path="/bothranges/{createdStartDate}/{createdEndDate}/{updatedStartDate}/{updatedEndDate}")
+	public @ResponseBody Iterable<Item> getItemsInBothRanges(@PathVariable String updatedStartDate, @PathVariable String updatedEndDate, @PathVariable String createdStartDate, @PathVariable String createdEndDate) {
+		// This returns a JSON or XML with the items
+		return itemRepository.findItemsInBothRanges(updatedStartDate, updatedEndDate, createdStartDate, createdEndDate);
+	}
+
 	@DeleteMapping(path="/delete/{id}")
 	public @ResponseBody void deleteItemById(@PathVariable Long id) {
 		// This deletes a JSON or XML with the items
