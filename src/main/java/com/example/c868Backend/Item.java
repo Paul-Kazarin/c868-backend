@@ -27,9 +27,11 @@ public class Item {
 	private String image;
 	private Boolean active;
 	private String comment;
+	private String createdBy;
 	@Column(name = "dateCreated")
 	@CreationTimestamp
 	private LocalDate dateCreated;
+	private String updatedBy;
 	@Column(name = "dateUpdated")
 	@UpdateTimestamp
 	private LocalDate dateUpdated;
@@ -81,5 +83,11 @@ public class Item {
 
 	public LocalDate getDateUpdated() {return dateUpdated;}
 	public void setDateUpdated(LocalDate dateUpdated) {this.dateUpdated = dateUpdated;}
+
+	public String getCreatedBy() {return createdBy;}
+	public void setCreatedBy(String createdBy) {this.createdBy = createdBy;}
+
+	public String getUpdatedBy() {return updatedBy;}
+	public void setUpdatedBy(String updatedBy) {this.updatedBy = updatedBy;}
 }
 

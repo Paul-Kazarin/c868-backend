@@ -29,13 +29,5 @@ j
 :src/main/java/com/example/c868Backend/ModelRepository.java,d/b/dbbf17fa473221f8969ce1b9c5de85aa21d601e9
 j
 :src/main/java/com/example/c868Backend/BrandRepository.java,e/9/e9718ec358e00915d14b3ad4cd29d3bdb82410e6
-l
-<src/main/java/com/example/c868Backend/SubTypeController.java,0/e/0e109289dc27220235314028ceb31d386d7e599b
-j
-:src/main/java/com/example/c868Backend/ModelController.java,a/e/aed66503b572e12504526ff776cbd280b5603487
-j
-:src/main/java/com/example/c868Backend/BrandController.java,3/d/3d657d79d2bef8e0b8e6f380fb7811e7e8b23d5f
-i
-9src/main/java/com/example/c868Backend/TypeRepository.java,3/9/39f460fdb3296b73b278ccb46618241dd1835320
 r
 Bsrc/main/java/com/example/c868Backend/ItemsInDateCreatedRange.java,f/7/f7a7182e7253234ee24c65635218fbe7df21e2f0

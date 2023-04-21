@@ -1,8 +1,11 @@
 package com.example.c868Backend;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +24,23 @@ public class TypeController {
         typeRepository.save(type);
         return type;
     }
+
     @GetMapping(path="/type/all")
     public @ResponseBody Iterable<Type> getAllTypes() {
         // This returns a JSON or XML with the items
         return typeRepository.findAll();
+    }
+
+    @GetMapping(path="/type/{id}")
+    public @ResponseBody
+    Optional<Type> getType(@PathVariable Integer id) {
+        // This returns a JSON or XML with the items
+        return typeRepository.findById(id);
+    }
+
+    @DeleteMapping(path="/type/delete")
+    public @ResponseBody void deleteType(@RequestBody Type type) {
+        // This deletes a JSON or XML with the items
+        typeRepository.delete(type);
     }
 }

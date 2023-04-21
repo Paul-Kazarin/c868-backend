@@ -2,6 +2,7 @@ package com.example.c868Backend;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,5 +27,11 @@ public class ModelController {
     public @ResponseBody Iterable<Model> getAllModels() {
         // This returns a JSON or XML with the items
         return modelRepository.findAll();
+    }
+
+    @DeleteMapping(path="/model/delete")
+    public @ResponseBody void deleteModel(@RequestBody Model model) {
+        // This deletes a JSON or XML with the items
+        modelRepository.delete(model);
     }
 }

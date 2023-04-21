@@ -2,6 +2,7 @@ package com.example.c868Backend;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,5 +27,11 @@ public class SubTypeController {
     public @ResponseBody Iterable<SubType> getAllSubTypes() {
         // This returns a JSON or XML with the items
         return subTypeRepository.findAll();
+    }
+
+    @DeleteMapping(path="/subtype/delete")
+    public @ResponseBody void deleteSubType(@RequestBody SubType subType) {
+        // This deletes a JSON or XML with the items
+        subTypeRepository.delete(subType);
     }
 }
